@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Python</title>
+	<link rel="icon" type="image/ico" href="../img/favicon.ico" />
+	<link rel="stylesheet" href="../libs/reset.css">
+	<link rel="stylesheet" href="../libs/960_12_col.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+    <style>
+   .colortext {
+     color: #336d9d;
+   }
+  </style>
+
+</head>
+
+<body>
+		<header>
+			<div class="container_12">
+					<div class="grid_4">
+							<a href="../index.html" class="logo"><img src="../img/python-logo.png" alt=""></a>
+					</div>
+					<div class="grid_8">
+						<nav class="mnu_top">
+								<ul>
+									<li class="active"><a href="../index.html">Главная </a><span class="top_hover"></span></li>
+									<li><a href="lessons.html">Уроки</a><span class="top_hover"></span></li>
+									<li><a href="../test/test.html">Тест</a><span class="top_hover"></span></li>
+									<li><a href="#">Доп материалы</a><span class="top_hover"></span></li>
+								</ul>
+						</nav>
+					</div>
+			</div>
+		</header>
+<script src="../libs/html5shiv.min.js" type="text/javascript"></script>
+    <section class="presentation_container">
+        <div class="presentation">
+            <div class="container_12">
+                <div class="text-1">
+                <p>В этом уроке рассмотрим оператор ветвления if и операторы цикла while и for.  Основная цель &#8211; это дать общее представление об этих операторах и на простых примерах показать базовые принципы работы с ними.<span id="more-318"></span></p>
+<h2><strong>Условный оператор ветвления <em>if</em></strong></h2>
+<p><span style="font-weight: 400;">Оператор ветвления <em>if</em>  позволяет выполнить определенный набор инструкций в зависимости от некоторого условия. </span><span style="font-weight: 400;">Возможны следующие варианты использования.</span></p>
+<h3><strong>1. Конструкция <em>if</em></strong></h3>
+<p>Синтаксис оператора <em>if</em> выглядит так.</p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">if</span> выражение:
+    инструкция_<span style="color: #811f24; font-weight: bold;">1</span>
+    инструкция_<span style="color: #811f24; font-weight: bold;">2</span>
+    ...
+    инструкция_n
+</pre>
+<p><span style="font-weight: 400;">После оператора <em>if</em>  записывается выражение. Если это выражение истинно, то выполняются инструкции, определяемые данным оператором. </span><span style="font-weight: 400;">Выражение является истинным, если его результатом является число не равное нулю, непустой объект, либо логическое <em>True</em>. </span><span style="font-weight: 400;">После выражения нужно поставить двоеточие “:”.</span></p>
+<p><span style="font-weight: 400;"><strong>ВАЖНО</strong>: блок кода, который необходимо выполнить, в случае истинности выражения, отделяется четырьмя пробелами слева!</span></p>
+<p><span style="font-weight: 400;">Примеры:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">if</span> <span style="color: #811f24; font-weight: bold;">1</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"hello 1"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em><span style="font-weight: 400;">hello 1</span></em></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">3</span>
+<span style="color: #794938;">if</span> a <span style="color: #794938;">==</span> <span style="color: #811f24; font-weight: bold;">3</span>:
+    <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"hello 2"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em>hello 2</em></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">3</span>
+<span style="color: #794938;">if</span> a <span style="color: #794938;">&gt;</span> <span style="color: #811f24; font-weight: bold;">1</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"hello 3"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em>hello 3</em></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">lst <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+<span style="color: #794938;">if</span> lst :
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"hello 4"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em>hello 4</em></p>
+<h3><strong>2. Конструкция <em>if &#8211; else</em></strong></h3>
+<p><span style="font-weight: 400;">Бывают случаи, когда необходимо предусмотреть альтернативный вариант выполнения программы. Т.е. при истинном условии нужно выполнить один набор инструкций, при ложном &#8211; другой. Для этого используется конструкция <em>if &#8211; else</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">if</span> выражение:
+    инструкция_1
+    инструкция_2
+    ...
+    инструкция_n
+<span style="color: #794938;">else</span>:
+    инструкция_a
+    инструкция_b
+    ...
+    инструкция_x
+</pre>
+<p><span style="font-weight: 400;">Примеры.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">3</span>
+<span style="color: #794938;">if</span> a <span style="color: #794938;">&gt;</span> <span style="color: #811f24; font-weight: bold;">2</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"H"</span>)
+<span style="color: #794938;">else</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"L"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em><span style="font-weight: 400;">H</span></em></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">1</span>
+<span style="color: #794938;">if</span> a <span style="color: #794938;">&gt;</span> <span style="color: #811f24; font-weight: bold;">2</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"H"</span>)
+<span style="color: #794938;">else</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"L"</span>)
+</pre>
+<p><span style="font-weight: 400;">Напечатает: </span><em><span style="font-weight: 400;">L</span></em></p>
+<p><span style="font-weight: 400;">Условие такого вида можно записать в строчку, в таком случае оно будет представлять собой <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F" target="_blank" rel="noopener">тернарное выражение</a>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">17</span>
+b <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">True</span> <span style="color: #794938;">if</span> a <span style="color: #794938;">&gt;</span> <span style="color: #811f24; font-weight: bold;">10</span> <span style="color: #794938;">else</span> <span style="color: #811f24; font-weight: bold;">False</span>
+<span style="color: #794938;">print</span>(b)
+</pre>
+<p><span style="font-weight: 400;">В результате выполнения такого кода будет напечатано: </span><em><span style="font-weight: 400;">True</span></em></p>
+<h3><strong>3. Конструкция <em>if &#8211; elif &#8211; else</em></strong></h3>
+<p><span style="font-weight: 400;">Для реализации выбора из нескольких альтернатив можно использовать конструкцию<em> if &#8211; elif &#8211; else</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">if</span> выражение_1:
+    инструкции_(блок_1)
+<span style="color: #794938;">elif</span> выражение_2:
+    инструкции_(блок_2)
+<span style="color: #794938;">elif</span> выражение_3:
+    инструкции_(блок_3)
+<span style="color: #794938;">else</span>:
+    инструкции_(блок_4)
+</pre>
+<p><span style="font-weight: 400;">Пример.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #691c97;">int</span>(<span style="color: #693a17;">input</span>(<span style="color: #0b6125;">"введите число:"</span>))
+<span style="color: #794938;">if</span> a <span style="color: #794938;">&lt;</span> <span style="color: #811f24; font-weight: bold;">0</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"Neg"</span>)
+<span style="color: #794938;">elif</span> a <span style="color: #794938;">==</span> <span style="color: #811f24; font-weight: bold;">0</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"Zero"</span>)
+<span style="color: #794938;">else</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"Pos"</span>)
+</pre>
+<p>Если пользователь введет число меньше нуля, то будет напечатано &#8220;<em>Neg</em>&#8220;, равное нулю &#8211; &#8220;<em>Zero</em>&#8220;, большее нуля &#8211; &#8220;<em>Pos</em>&#8220;.</p>
+<h2><strong>Оператор цикла <em>while</em></strong></h2>
+<p><span style="font-weight: 400;">Оператор цикла <em>while </em> выполняет указанный набор инструкций до тех пор, пока условие цикла истинно. Истинность условия определяется также как и в операторе <em>if</em>. </span><span style="font-weight: 400;">Синтаксис оператора <em>while </em> выглядит так.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">while</span> выражение:
+    инструкция_1
+    инструкция_2
+    ...
+    инструкция_n
+</pre>
+<p><span style="font-weight: 400;">Выполняемый набор инструкций называется телом цикла.</span></p>
+<p><span style="font-weight: 400;">Пример.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">0</span>
+<span style="color: #794938;">while</span> a <span style="color: #794938;">&lt;</span> <span style="color: #811f24; font-weight: bold;">7</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"A"</span>)
+   a <span style="color: #794938;">+=</span> <span style="color: #811f24; font-weight: bold;">1</span>
+</pre>
+<p>Буква &#8220;А&#8221; будет выведена семь раз в столбик.</p>
+<p><span style="font-weight: 400;">Пример бесконечного цикла.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">0</span>
+<span style="color: #794938;">while</span> a <span style="color: #794938;">==</span> <span style="color: #811f24; font-weight: bold;">0</span>:
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"A"</span>)
+</pre>
+<h3>Операторы <em>break</em> и <em>continue</em></h3>
+<p><span style="font-weight: 400;">При работе с циклами используются операторы <strong><em>break </em> </strong>и <strong><em>continue</em></strong>.</span></p>
+<p><span style="font-weight: 400;">Оператор <strong><em>break</em>  </strong>предназначен для досрочного прерывания работы цикла <em>while</em>.</span></p>
+<p><span style="font-weight: 400;">Пример.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">0</span>
+<span style="color: #794938;">while</span> a <span style="color: #794938;">&gt;=</span> <span style="color: #811f24; font-weight: bold;">0</span>:
+   <span style="color: #794938;">if</span> a <span style="color: #794938;">==</span> <span style="color: #811f24; font-weight: bold;">7</span>:
+       <span style="color: #794938;">break</span>
+   a <span style="color: #794938;">+=</span> <span style="color: #811f24; font-weight: bold;">1</span>
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"A"</span>)
+</pre>
+<p><span style="font-weight: 400;">В приведенном выше коде, выход из цикла произойдет при достижении переменной <em>a</em>  значения 7. Если бы не было этого условия, то цикл выполнялся бы бесконечно.</span></p>
+<p><span style="font-weight: 400;">Оператор <em><strong>continue</strong>  </em>запускает цикл заново, при этом код, расположенный после данного оператора, не выполняется.</span></p>
+<p><span style="font-weight: 400;">Пример.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> -<span style="color: #811f24; font-weight: bold;">1</span>
+<span style="color: #794938;">while</span> a <span style="color: #794938;">&lt;</span> <span style="color: #811f24; font-weight: bold;">10</span>:
+   a <span style="color: #794938;">+=</span> <span style="color: #811f24; font-weight: bold;">1</span>
+   <span style="color: #794938;">if</span> a <span style="color: #794938;">&gt;=</span> <span style="color: #811f24; font-weight: bold;">7</span>:
+       <span style="color: #794938;">continue</span>
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"A"</span>)
+</pre>
+<p><span style="font-weight: 400;">При запуске данного кода символ “А” будет напечатан 7 раз, несмотря на то, что всего будет выполнено 11 проходов цикла.</span></p>
+<h2><strong>Оператор цикла <em>for</em></strong></h2>
+<p><span style="font-weight: 400;">Оператор <em>for </em> выполняет указанный набор инструкций заданное количество раз, которое определяется количеством элементов в наборе.</span></p>
+<p><span style="font-weight: 400;">Пример. </span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">for</span> i <span style="color: #794938;">in</span> <span style="color: #693a17;">range</span>(<span style="color: #811f24; font-weight: bold;">5</span>):
+   <span style="color: #794938;">print</span>(<span style="color: #0b6125;">"Hello"</span>)
+</pre>
+<p>В результате <em>&#8220;Hello&#8221;</em> будет выведено пять раз.</p>
+<p><span style="font-weight: 400;">Внутри тела цикла можно использовать операторы <strong><em>break </em> </strong>и <strong><em>continue</em></strong>, принцип работы их точно такой же как и в операторе <em>while</em>.</span></p>
+<p><span style="font-weight: 400;">Если у вас есть заданный список, и вы хотите выполнить над каждым элементом определенную операцию (возвести в квадрат и напечатать получившееся число), то с помощью <em>for</em>  такая задача решается так.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">lst <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">for</span> i <span style="color: #794938;">in</span> lst:
+   <span style="color: #794938;">print</span>(i <span style="color: #794938;">*</span><span style="color: #794938;">*</span> <span style="color: #811f24; font-weight: bold;">2</span>)
+</pre>
+<p><span style="border-radius: 5px; padding: 5px; font-weight: 400;">Также можно пройти по всем буквам в строке.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">word_str <span style="color: #794938;">=</span> <span style="color: #0b6125;">"Hello, world!"</span>
+<span style="color: #794938;">for</span> l <span style="color: #794938;">in</span> word_str:
+   <span style="color: #794938;">print</span>(l)
+</pre>
+<p><span style="font-weight: 400;">Строка <em>&#8220;Hello, world!&#8221;</em> будет напечатана в столбик.</span></p>
+<p><span style="font-weight: 400;">На этом закончим краткий обзор операторов ветвления и цикла.</span></p>
+</div>
+            </div>
+              
+        </div>
+                    
+    </section>
+      
+    <footer>
+
+        <div class="container_12">
+
+        <div class="grid_4">
+                            <p class="buttond" style="text-align:left;"><a href="les-4.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Предыдущий урок</a></p>
+                    </div>
+                            <div class="grid_8">
+                           <p class="buttond" style="text-align:right;"><a href="les-6.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Следующий урок</a></p>
+                    </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

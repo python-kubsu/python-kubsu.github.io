@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Python</title>
+	<link rel="icon" type="image/ico" href="../img/favicon.ico" />
+	<link rel="stylesheet" href="../libs/reset.css">
+	<link rel="stylesheet" href="../libs/960_12_col.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+    <style>
+   .colortext {
+     color: #336d9d;
+   }
+  </style>
+
+</head>
+
+<body>
+		<header>
+			<div class="container_12">
+					<div class="grid_4">
+							<a href="../index.html" class="logo"><img src="../img/python-logo.png" alt=""></a>
+					</div>
+					<div class="grid_8">
+						<nav class="mnu_top">
+								<ul>
+									<li class="active"><a href="../index.html">Главная </a><span class="top_hover"></span></li>
+									<li><a href="lessons.html">Уроки</a><span class="top_hover"></span></li>
+									<li><a href="../test/test.html">Тест</a><span class="top_hover"></span></li>
+									<li><a href="#">Доп материалы</a><span class="top_hover"></span></li>
+								</ul>
+						</nav>
+					</div>
+			</div>
+		</header>
+<script src="../libs/html5shiv.min.js" type="text/javascript"></script>
+    <section class="presentation_container">
+        <div class="presentation">
+            <div class="container_12">
+                <div class="text-1">
+               <p><span style="font-weight: 400;">Одна из ключевых особенностей Python, благодаря которой он является таким популярным &#8211; это простота. Особенно подкупает простота работы с различными структурами данных &#8211; списками, кортежами, словарями и множествами. Сегодня мы рассмотрим <strong>работу со списками</strong>.</span><span id="more-380"></span></p>
+<h2><strong>Что такое список (list) в Python?</strong></h2>
+<p><span style="font-weight: 400;">Список (list) &#8211; это структура данных для хранения объектов различных типов. Если вы использовали другие языки программирования, то вам должно быть знакомо понятие массива. Так вот, список очень похож на массив, только, как было уже сказано выше, в нем можно хранить объекты различных типов. Размер списка не статичен, его можно изменять. Список по своей природе является изменяемым типом данных. Про типы данных можно подробно прочитать <a href="les-3.html" target="_blank" rel="noopener">здесь</a></span><span style="font-weight: 400;">. Переменная, определяемая как список, содержит ссылку на структуру в памяти, которая в свою очередь хранит ссылки на какие-либо другие объекты или структуры.</span></p>
+<h2><strong>Как списки хранятся в памяти?</strong></h2>
+<p><span style="font-weight: 400;">Как уже было сказано выше, список является изменяемым типом данных. При его создании в памяти резервируется область, которую можно условно назвать некоторым “контейнером”, в котором хранятся ссылки на другие элементы данных в памяти. В отличии от таких типов данных как число или строка, содержимое “контейнера” списка можно менять. Для того, чтобы лучше визуально представлять себе этот процесс взгляните на картинку ниже. Изначально был создан список содержащий ссылки на объекты 1 и 2, после операции <em>a[1] = 3</em>, вторая ссылка в списке стала указывать на объект 3.</span></p>
+<p><img class="alignnone size-full wp-image-262" src="../img/python-lesson6.png" alt="Пример изменяемого объекта" width="695" height="420" /></p>
+<p><span style="font-weight: 400;">Более подробно эти вопросы обсуждались в <a href="les-3.html" target="_blank" rel="noopener">уроке 3 (Типы и модель данных)</a>.</span></p>
+<h2><strong>Создание, изменение, удаление списков и работа с его элементами</strong></h2>
+<p><span style="font-weight: 400;">Создать список можно одним из следующих способов.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> []
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #691c97;">type</span>(a)
+<span style="color: #794938;">&lt;</span><span style="color: #a71d5d; font-style: italic;">class</span> <span style="color: #0b6125;">'list'</span><span style="color: #794938;">&gt;</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> <span style="color: #691c97;">list</span>()
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #691c97;">type</span>(b)
+<span style="color: #794938;">&lt;</span><span style="color: #a71d5d; font-style: italic;">class</span> <span style="color: #0b6125;">'list'</span><span style="color: #794938;">&gt;</span>
+</pre>
+<p><span style="font-weight: 400;">Также можно создать список с заранее заданным набором данных.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #691c97;">type</span>(a)
+<span style="color: #794938;">&lt;</span><span style="color: #a71d5d; font-style: italic;">class</span> <span style="color: #0b6125;">'list'</span><span style="color: #794938;">&gt;</span>
+</pre>
+<p><span style="font-weight: 400;">Если у вас уже есть список и вы хотите создать его копию, то можно воспользоваться следующим способом:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> a[:]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+</pre>
+<p><span style="font-weight: 400;">или сделать это так:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> <span style="color: #691c97;">list</span>(a)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+</pre>
+<p><span style="font-weight: 400;">В случае, если вы выполните простое присвоение списков друг другу, то переменной <em>b</em> будет присвоена ссылка на тот же элемент данных в памяти, на который ссылается <em>a</em>, а не копия списка <em>а</em>. Т.е. если вы будете изменять список <em>a</em>, то и <em>b</em> тоже будет меняться.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> a
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a[<span style="color: #811f24; font-weight: bold;">1</span>] <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">10</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">10</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">10</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+</pre>
+<p><span style="font-weight: 400;">Добавление элемента в список осуществляется с помощью метода append().</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> []
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.append(<span style="color: #811f24; font-weight: bold;">3</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.append(<span style="color: #0b6125;">"hello"</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #0b6125;">'hello'</span>]
+</pre>
+<p><span style="font-weight: 400;">Для удаления элемента из списка, в случае, если вы знаете его значение, используйте метод remove(x), при этом будет удалена первая ссылка на данный элемент.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b.remove(<span style="color: #811f24; font-weight: bold;">3</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+</pre>
+<p><span style="font-weight: 400;">Если необходимо удалить элемент по его индексу, воспользуйтесь командой <em>del имя_списка[индекс]</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> c <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">6</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(c)
+[<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">6</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">del</span> c[<span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(c)
+[<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">6</span>]
+</pre>
+<p><span style="font-weight: 400;">Изменить значение элемента списка, зная его индекс, можно напрямую к нему обратившись.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> d <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(d)
+[<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> d[<span style="color: #811f24; font-weight: bold;">1</span>] <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">17</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(d)
+[<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">17</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+</pre>
+<p><span style="font-weight: 400;">Очистить список можно просто заново его проинициализировав, так как будто вы его вновь создаете. </span><span style="font-weight: 400;">Для получения доступа к элементу списка укажите индекс этого элемента в квадратных скобках.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">10</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">6</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">0</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a[<span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #811f24; font-weight: bold;">7</span>
+</pre>
+<p><span style="font-weight: 400;">Можно использовать отрицательные индексы, в таком случае счет будет идти с конца, например для доступа к последнему элементу списка можно использовать вот такую команду:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a[<span style="color: #794938;">-</span><span style="color: #811f24; font-weight: bold;">1</span>]
+<span style="color: #811f24; font-weight: bold;">0</span>
+</pre>
+<p><span style="font-weight: 400;">Для получения из списка некоторого подсписка в определенном диапазоне индексов, укажите начальный и конечный индекс в квадратных скобках, разделив их двоеточием.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a[<span style="color: #811f24; font-weight: bold;">1</span>:<span style="color: #811f24; font-weight: bold;">4</span>]
+[<span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">10</span>]
+</pre>
+<h2><strong>Методы списков</strong></h2>
+<p><em><strong>list.append(x)</strong></em></p>
+<p><span style="font-weight: 400;">Добавляет элемент в конец списка. Ту же операцию можно сделать так <em>a[len(a):] = [x]</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.append(<span style="color: #811f24; font-weight: bold;">3</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+</pre>
+<p><em><strong>list.extend(L)</strong></em></p>
+<p><span style="font-weight: 400;">Расширяет существующий список за счет добавления всех элементов из списка <em>L</em>. Эквивалентно команде <em>a[len(a):] = L</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.extend(b)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span>]
+</pre>
+<p><em><strong>list.insert(i, x)</strong></em></p>
+<p><span style="font-weight: 400;">Вставить элемент <em>x</em> в позицию <em>i</em>.  Первый аргумент &#8211; индекс элемента после которого будет вставлен элемент <em>x</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.insert(<span style="color: #811f24; font-weight: bold;">0</span>, <span style="color: #811f24; font-weight: bold;">5</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.insert(<span style="color: #693a17;">len</span>(a), <span style="color: #811f24; font-weight: bold;">9</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+</pre>
+<p><em><strong>list.remove(x)</strong></em></p>
+<p><span style="font-weight: 400;">Удаляет первое вхождение элемента <em>x</em> из списка.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.remove(<span style="color: #811f24; font-weight: bold;">1</span>)
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+</pre>
+<p><em><strong>list.pop([i])</strong></em></p>
+<p><span style="font-weight: 400;">Удаляет элемент из позиции <em>i</em> и возвращает его. Если использовать метод без аргумента, то будет удален последний элемент из списка.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a.pop(<span style="color: #811f24; font-weight: bold;">2</span>))
+<span style="color: #811f24; font-weight: bold;">3</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a.pop())
+<span style="color: #811f24; font-weight: bold;">5</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span>]
+</pre>
+<p><em><strong>list.clear()</strong></em></p>
+<p><span style="font-weight: 400;">Удаляет все элементы из списка. Эквивалентно <em>del a[:]</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.clear()
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[]
+</pre>
+<p><em><strong>list.index(x[, start[, end]])</strong></em></p>
+<p><span style="font-weight: 400;">Возвращает индекс элемента.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.index(<span style="color: #811f24; font-weight: bold;">4</span>)
+<span style="color: #811f24; font-weight: bold;">3</span>
+</pre>
+<p><em><strong>list.count(x)</strong></em></p>
+<p><span style="font-weight: 400;">Возвращает количество вхождений элемента <em>x</em> в список.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a<span style="color: #794938;">=</span>[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a.count(<span style="color: #811f24; font-weight: bold;">2</span>))
+<span style="color: #811f24; font-weight: bold;">2</span>
+</pre>
+<p><em><strong>list.sort(key=None, reverse=False)</strong></em></p>
+<p><span style="font-weight: 400;">Сортирует элементы в списке по возрастанию. Для сортировки в обратном порядке используйте флаг <em>reverse=True</em>. Дополнительные возможности открывает параметр <em>key</em>, за более подробной информацией обратитесь к документации.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">8</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.sort()
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">2</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">4</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">8</span>]
+</pre>
+<p><em><strong>list.reverse()</strong></em></p>
+<p><span style="font-weight: 400;">Изменяет порядок расположения элементов в списке на обратный.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a.reverse()
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">5</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">3</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">1</span>]
+</pre>
+<p><em><strong>list.copy()</strong></em></p>
+<p><span style="font-weight: 400;">Возвращает копию списка. Эквивалентно <em>a[:]</em>.</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;"><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> a <span style="color: #794938;">=</span> [<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b <span style="color: #794938;">=</span> a.copy()
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> b[<span style="color: #811f24; font-weight: bold;">0</span>] <span style="color: #794938;">=</span> <span style="color: #811f24; font-weight: bold;">8</span>
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(a)
+[<span style="color: #811f24; font-weight: bold;">1</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+<span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span><span style="color: #794938;">&gt;</span> <span style="color: #794938;">print</span>(b)
+[<span style="color: #811f24; font-weight: bold;">8</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">7</span><span style="color: #794938;">,</span> <span style="color: #811f24; font-weight: bold;">9</span>]
+</pre>
+<h2><strong>List Comprehensions</strong></h2>
+<p><span style="font-weight: 400;"><em>List Comprehensions</em> чаще всего на русский язык переводят как  абстракция списков или списковое включение, является частью синтаксиса языка, которая предоставляет простой способ построения списков. </span><span style="font-weight: 400;">Проще всего работу <em>list comprehensions</em> показать на примере. Допустим вам необходимо создать список целых чисел от <i>0</i> до <em>n</em>, где <em>n</em> предварительно задается. Классический способ решения данной задачи выглядел бы так:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">n <span style="color: #794938;">=</span> <span style="color: #691c97;">int</span>(<span style="color: #693a17;">input</span>())
+a <span style="color: #794938;">=</span> []
+<span style="color: #794938;">for</span> i <span style="color: #794938;">in</span> <span style="color: #693a17;">range</span>(n):
+    a.append(i)
+<span style="color: #794938;">print</span>(a)
+</pre>
+<p><span style="font-weight: 400;">Использование <em>list comprehensions</em> позволяет сделать это значительно проще:</span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">n <span style="color: #794938;">=</span> <span style="color: #691c97;">int</span>(<span style="color: #693a17;">input</span>())
+a <span style="color: #794938;">=</span> [i <span style="color: #794938;">for</span> i <span style="color: #794938;">in</span> <span style="color: #693a17;">range</span>(n)]
+<span style="color: #794938;">print</span>(a)
+</pre>
+<p><span style="font-weight: 400;">или вообще вот так, в случае если вам не нужно больше использовать <em>n:</em></span></p>
+<pre style="border-radius: 5px; padding: 5px; background: #f9f9f9; color: #080808;">a <span style="color: #794938;">=</span> [i <span style="color: #794938;">for</span> i <span style="color: #794938;">in</span> <span style="color: #693a17;">range</span>(<span style="color: #691c97;">int</span>(<span style="color: #693a17;">input</span>()))]
+<span style="color: #794938;">print</span>(a)
+</pre>
+</div>
+            </div>
+              
+        </div>
+                    
+    </section>
+      
+    <footer>
+
+        <div class="container_12">
+
+        <div class="grid_4">
+                            <p class="buttond" style="text-align:left;"><a href="les-4.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Предыдущий урок</a></p>
+                    </div>
+                            <div class="grid_8">
+                           <p class="buttond" style="text-align:right;"><a href="les-6.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Следующий урок</a></p>
+                    </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Python</title>
+	<link rel="icon" type="image/ico" href="../img/favicon.ico" />
+	<link rel="stylesheet" href="../libs/reset.css">
+	<link rel="stylesheet" href="../libs/960_12_col.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+    <style>
+   .colortext {
+     color: #336d9d;
+   }
+  </style>
+
+</head>
+
+<body>
+		<header>
+			<div class="container_12">
+					<div class="grid_4">
+							<a href="../index.html" class="logo"><img src="../img/python-logo.png" alt=""></a>
+					</div>
+					<div class="grid_8">
+						<nav class="mnu_top">
+								<ul>
+									<li class="active"><a href="../index.html">Главная </a><span class="top_hover"></span></li>
+									<li><a href="lessons.html">Уроки</a><span class="top_hover"></span></li>
+									<li><a href="../test/test.html">Тест</a><span class="top_hover"></span></li>
+									<li><a href="#">Доп материалы</a><span class="top_hover"></span></li>
+								</ul>
+						</nav>
+					</div>
+			</div>
+		</header>
+<script src="../libs/html5shiv.min.js" type="text/javascript"></script>
+    <section class="presentation_container">
+        <div class="presentation">
+            <div class="container_12">
+                <div class="text-1">
+                <h2>Что такое оператор?</h2>
+<p>Говоря простым языком, в выражении 2 + 3, числа "2" и "3" называются операндами, знак "+" оператором. В <strong>языке программирования Python</strong> существуют следующие <strong>типы операторов</strong>:</p>
+<ul>
+<li><a href="#arithmetic"><em>Арифметические операторы</em></a></li>
+<li><a href="#compare"><em>Операторы сравнения (реляционные)</em></a></li>
+<li><a href="#assign"><em>Операторы присваивания</em></a></li>
+<li><a href="#bitwise"><em>Побитовые операторы</em></a></li>
+<li><a href="#logic"><em>Логические операторы</em></a></li>
+<li><a href="#membership"><em>Операторы членства (Membership operators)</em></a></li>
+<li><a href="#identity"><em>Операторы тождественности (Identity operators)</em></a></li>
+</ul>
+<p>Рассмотрим их по порядку.</p>
+<h2><a name="arithmetic">Арифметические операторы в Python:</a></h2>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">+</span></strong></td>
+<td>Сложение - Суммирует значения слева и справа от оператора</td>
+<td>
+<p>15 + 5 в результате будет 20<br /> 20 + -3 в результате будет 17<br /> 13.4 + 7 в результате будет 20.4</p>
+</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">-</span></strong></td>
+<td>Вычитание - Вычитает правый операнд из левого</td>
+<td>15 - 5 в результате будет 10<br /> 20 - -3 в результате будет 23<br /> 13.4 - 7 в результате будет 6.4</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">*</span></strong></td>
+<td>Умножение - Перемножает операнды</td>
+<td>5 * 5 в результате будет 25<br />7 * 3.2 в результате будет 22.4<br />-3 * 12 в результате будет -36</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">/</span></strong></td>
+<td>Деление - Делит левый операнд на правый</td>
+<td>15 / 5 в результате будет 3<br />5 / 2 в результате будет 2 (В Python 2.x версии при делении двух целых чисел результат будет целое число)<br /> 5.0 / 2 в результате будет 2.5 (Чтобы получить "правильный" результат хотя бы один операнд должен быть float)</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">%</span></strong></td>
+<td>Деление по модулю - Делит левый операнд на правый и возвращает остаток.</td>
+<td>6 % 2 в результате будет 0<br />7 % 2 в результате будет 1<br />13.2 % 5 в результате 3.2</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">**</span></strong></td>
+<td>Возведение в степень - возводит левый операнд в степень правого</td>
+<td>5 ** 2 в результате будет 25<br />2 ** 3 в результате будет 8<br />-3 ** 2 в результате будет -9</td>
+</tr>
+<tr>
+<td style="background-color: #2b5b84; text-align: center;"><strong><span style="color: #ffff00;">//</span></strong></td>
+<td>Целочисленное деление - Деление в котором возвращается только целая часть результата. Часть после запятой отбрасывается.</td>
+<td>12 // 5 в результате будет 2<br />4 // 3 в результате будет 1<br />25 // 6 в результате будет 4</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="compare">Операторы сравнения в Python:</a></h2>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">==</span></strong></td>
+<td>Проверяет равны ли оба операнда. Если да, то условие становится истинным.</td>
+<td>5 == 5 в результате будет True<br />True == False в результате будет False<br />"hello" == "hello" в результате будет True</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">!=</span></strong></td>
+<td>Проверяет равны ли оба операнда. Если нет, то условие становится истинным.</td>
+<td>12 != 5 в результате будет True<br />False != False в результате будет False<br />"hi" != "Hi" в результате будет True</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">&lt;&gt;</span></strong></td>
+<td>Проверяет равны ли оба операнда. Если нет, то условие становится истинным.</td>
+<td>
+<p>12 &lt;&gt; 5 в результате будет True. Похоже на оператор !=</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">&gt;</span></strong></td>
+<td>Проверяет больше ли значение левого операнда, чем значение правого. Если да, то условие становится истинным.</td>
+<td>5 &gt; 2 в результате будет True.<br />True &gt; False в результате будет True.<br />"A" &gt; "B" в результате будет False.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">&lt;</span></strong></td>
+<td>Проверяет меньше ли значение левого операнда, чем значение правого. Если да, то условие становится истинным.</td>
+<td>3 &lt; 5 в результате будет True.<br />True &lt; False в результате будет False.<br />"A" &lt; "B" в результате будет True.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">&gt;=</span></strong></td>
+<td>Проверяет больше или равно значение левого операнда, чем значение правого. Если да, то условие становится истинным.</td>
+<td>1 &gt;= 1 в результате будет True.<br />23 &gt;= 3.2 в результате будет True.<br />"C" &gt;= "D" в результате будет False.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">&lt;=</span></strong></td>
+<td>Проверяет меньше или равно значение левого операнда, чем значение правого. Если да, то условие становится истинным.</td>
+<td>4 &lt;= 5 в результате будет True.<br />0 &lt;= 0.0 в результате будет True.<br />-0.001 &lt;= -36 в результате будет False.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="assign">Операторы присваивания в Python:</a></h2>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">=</span></strong></td>
+<td>Присваивает значение правого операнда левому.</td>
+<td>c = 23 присвоит переменной с значение 23</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">+=</span></strong></td>
+<td>Прибавит значение правого операнда к левому и присвоит эту сумму левому операнду.</td>
+<td>
+<p>с = 5<br /> а = 2 <br />с += а равносильно: с = с + а. с будет равно 7</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">-=</span></strong></td>
+<td>Отнимает значение правого операнда от левого и присваивает результат левому операнду.</td>
+<td>
+<p>с = 5<br /> а = 2 <br />с -= а равносильно: с = с - а. с будет равно 3</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">*=</span></strong></td>
+<td>Умножает правый операнд с левым и присваивает результат левому операнду.</td>
+<td>
+<p>с = 5<br /> а = 2 <br />с *= а равносильно: с = с * а. c будет равно 10</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">/=</span></strong></td>
+<td>Делит левый операнд на правый и присваивает результат левому операнду.</td>
+<td>с = 10<br /> а = 2 <br />с /= а равносильно: с = с / а. c будет равно 5</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">%=</span></strong></td>
+<td>Делит по модулю операнды и присваивает результат левому.</td>
+<td>с = 5<br /> а = 2 <br />с %= а равносильно: с = с % а. c будет равно 1</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">**=</span></strong></td>
+<td>Возводит в левый операнд в степень правого и присваивает результат левому операнду.</td>
+<td>с = 3<br /> а = 2 <br />с **= а равносильно: с = с ** а. c будет равно 9</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">//=</span></strong></td>
+<td>Производит целочисленное деление левого операнда на правый и присваивает результат левому операнду.</td>
+<td>с = 11<br /> а = 2 <br />с //= а равносильно: с = с // а. c будет равно 5</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="bitwise">Побитовые операторы в Python:</a></h2>
+<p>Побитовые операторы предназначены для работы с данными в битовом (двоичном) формате. Предположим, что у нас есть два числа a = 60; и b = 13. В двоичном формате они будут иметь следующий вид:</p>
+<p>a = 0011 1100</p>
+<p>b = 0000 1101</p>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&amp;</strong></span></td>
+<td>Бинарный "И" оператор, копирует бит в результат только если бит присутствует в обоих операндах.</td>
+<td>(a &amp; b) даст нам 12, которое в двоичном формате выглядит так 0000 1100</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>|</strong></span></td>
+<td>Бинарный "ИЛИ" оператор копирует бит, если тот присутствует в хотя бы в одном операнде.</td>
+<td>(a | b) даст нам 61, в двоичном формате 0011 1101</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>^</strong></span></td>
+<td>Бинарный "Исключительное ИЛИ" оператор копирует бит только если бит присутствует в одном из операндов, но не в обоих сразу.</td>
+<td>(a ^ b) даст нам 49, в двоичном формате 0011 0001</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>~</strong></span></td>
+<td>Бинарный комплиментарный оператор. Является унарным (то есть ему нужен только один операнд) меняет биты на обратные, там где была единица становиться ноль и наоборот.</td>
+<td>(~a ) даст в результате -61, в двоичном формате выглядит 1100 0011.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&lt;&lt;</strong></span></td>
+<td>Побитовый сдвиг влево. Значение левого операнда "сдвигается" влево на количество бит указанных в правом операнде.</td>
+<td>a &lt;&lt; 2 в результате даст 240, в двоичном формате 1111 0000</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&gt;&gt;</strong></span></td>
+<td>Побитовый сдвиг вправо. Значение левого операнда "сдвигается" вправо на количество бит указанных в правом операнде.</td>
+<td>a &gt;&gt; 2 даст 15, в двоичном формате&nbsp; 0000 1111</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="logic">Логические операторы в Python:</a></h2>
+<p></p>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">and</span></strong></td>
+<td>Логический оператор "И". Условие будет истинным если оба операнда истина.</td>
+<td>
+<p>True and True равно True.<br />True and False равно False.<br />False and True равно False.<br /> False and False равно False.</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">or</span></strong></td>
+<td>Логический оператор "ИЛИ". Если хотя бы один из операндов истинный, то и все выражение будет истинным.</td>
+<td>True or True равно True.<br />True or False равно True.<br />False or True равно True.<br /> False or False равно False.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">not</span></strong></td>
+<td>Логический оператор "НЕ". Изменяет логическое значение операнда на противоположное.</td>
+<td>not True равно False.<br />not False равно True.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="membership">Операторы членства в Python:</a></h2>
+<p>В добавок к перечисленным операторам, в <strong>Python</strong> присутствуют, так называмые, операторы членства, предназначенные для проверки на наличие элемента в составных типах данных, таких, как строки, списки, кортежи или словари:</p>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">in</span></strong></td>
+<td>Возвращает истину, если элемент присутствует в последовательности, иначе возвращает ложь.</td>
+<td>"cad" in "cadillac" вернет True.<br />1 in [2,3,1,6] вернет True.<br />"hi" in {"hi":2,"bye":1} вернет True.<br />&nbsp;2 in {"hi":2,"bye":1} вернет False (в словарях проверяется наличие в ключах, а не в значениях).</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><strong><span style="color: #ffff00;">not in</span></strong></td>
+<td>Возвращает истину если элемента нет в последовательности.</td>
+<td>Результаты противоположны результатам оператора in.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="identity">Операторы тождественности в Python:</a></h2>
+<p>Операторы тождественности сравнивают размещение двух объектов в памяти компьютера.</p>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th style="width: 10%;"><span style="color: #ffff00;">Оператор</span></th><th style="width: 45%;"><span style="color: #ffff00;">Описание</span></th><th><span style="color: #ffff00;">Примеры</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>is</strong></span></td>
+<td>Возвращает истину, если оба операнда указывают на один объект.</td>
+<td>x is y вернет истину, если id(x) будет равно id(y).</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>is not</strong></span></td>
+<td>Возврашает ложь если оба операнда указывают на один объект.</td>
+<td>x is not y, вернет истину если id(x) не равно id(y).</td>
+</tr>
+</tbody>
+</table>
+<h2>Приоритет операторов в Python</h2>
+<p>В следующей таблице описан приоритет выполнения операторов в <strong>Python</strong> от наивысшего (выполняется в первую очередь) до наинизшего.</p>
+<table class="src" border="1">
+<tbody>
+<tr style="background-color: #2b5b84;"><th><span style="color: #ffff00;">Оператор</span></th><th><span style="color: #ffff00;">Описание</span></th></tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>**</strong></span></td>
+<td>Возведение в степень</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>~ + -</strong></span></td>
+<td>Комплиментарный оператор</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>* / % //</strong></span></td>
+<td>Умножение, деление, деление по модулю, целочисленное деление.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>+ -</strong></span></td>
+<td>Сложение и вычитание.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&gt;&gt; &lt;&lt;</strong></span></td>
+<td>Побитовый сдвиг вправо и побитовый сдвиг влево.</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&amp;</strong></span></td>
+<td>Бинарный "И".</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>^ |</strong></span></td>
+<td>Бинарный&nbsp; "Исключительное ИЛИ" и бинарный "ИЛИ"</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&lt;= &lt; &gt; &gt;=</strong></span></td>
+<td>Операторы сравнения</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>&lt;&gt; == !=</strong></span></td>
+<td>Операторы равенства</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>= %= /= //= -= += *= **=</strong></span></td>
+<td>Операторы присваивания</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>is is not</strong></span></td>
+<td>Тождественные операторы</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>in not in</strong></span></td>
+<td>Операторы членства</td>
+</tr>
+<tr>
+<td style="text-align: center; background-color: #2b5b84;"><span style="color: #ffff00;"><strong>not or and</strong></span></td>
+<td>Логические операторы</td>
+</tr>
+</tbody>
+</table> 
+</div>
+            </div>
+              
+        </div>
+                    
+    </section>
+      
+    <footer>
+
+        <div class="container_12">
+
+        <div class="grid_4">
+                            <p class="buttond" style="text-align:left;"><a href="les-3.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Предыдущий урок</a></p>
+                    </div>
+                            <div class="grid_8">
+                           <p class="buttond" style="text-align:right;"><a href="les-5.html" target="_blank" style="cursor: pointer; font-size:14px; text-decoration: none; padding:13px 26px; color:#ffffff; background-color:#1c1c1c; border-radius:60px; border: 0px solid #5bd99a;">Следующий урок</a></p>
+                    </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
